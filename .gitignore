@@ -1,0 +1,18 @@
+.ipynb_checkpoints
+.DS_Store
+
+# LaTeX temporary files
+*.aux
+*.log
+*.toc
+*.fls
+*.blg
+*.bbl
+__latexindent_temp.tex
+*.out
+
+# Latexmk
+*.fdb_latexmk
+
+# SyncTeX
+*.synctex.gz
