@@ -65,10 +65,10 @@ due to the fact that a plant may have multiple diseases.
 
 There are 4 kinds of plant disease existing in the dataset:
 \begin{itemize}
-\item \textit{Frog-eye leaf spot}
-\item \textit{Powdery mildew}
-\item \textit{Rust}
-\item \textit{Scab}
+\item \textit{frog-eye leaf spot}
+\item \textit{powdery mildew}
+\item \textit{rust}
+\item \textit{scab}
 \end{itemize}
 
 Additionally, a sample is labelled as \textit{healthy} when no disease is spotted, 
@@ -147,13 +147,18 @@ We use focal loss in our models with the hyperparameters suggested by the paper.
 
 \section{Methods}
 
-\subsection{Data quality}
+\subsection{Encoding}
+The targets are encoded as one-hot vectors for 5 classes 
+(\textit{complex}, \textit{frog-eye leaf spot}, \textit{powdery mildew}, 
+\textit{rust}, \textit{scab}) and 
+as zero vector for \textit{healthy} class as it implies the absence of disease.
 
 \subsection{Model training and evaluation}
 We trained several models with ResNet, EfficientNet and XResNet architectures 
 with different model scales. Two model input sizes have been experimented; 
 $384 \times 384 \times 3$ and $512 \times 512 \times 3$. 
 The dataset is split into training and validation sets with 70-30\% ratios, respectively.
+
 Since the task is multi-label classification, binary cross-entropy loss (Eq.\ref{eq:bce})
 and focal loss (Eq.\ref{eq:fl}) functions have been used to train models. 
 We trained a baseline model with ResNet18 architecture pretrained on ImageNet 
