@@ -10,6 +10,8 @@
 *.bbl
 __latexindent_temp.tex
 *.out
+*-blx.bib
+*.run.xml
 
 # Latexmk
 *.fdb_latexmk
