@@ -1,7 +1,7 @@
 # Notes
 
 The evaluation metric for the competition is mean F1 score with macro.
-
+https://www.kaggle.com/buinyi/understanding-the-evaluation-metric-cv
 
 
 ## Training

@@ -8,7 +8,6 @@
 + Dataset inspection
     + Sample size
     + Class distribution
-    + Channel distribution
 - Training
     + Loss function
         + BCE
@@ -16,8 +15,7 @@
     + Choose a baseline model
     - Choose model architectures
         + ResNet
-        - EfficientNet
-        - ViT
+        + EfficientNet
     - Techniques and tricks
         + Augmentation
         + imagenet pretrained

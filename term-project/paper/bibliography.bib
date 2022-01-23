@@ -111,23 +111,6 @@
   year      = 2009
 }
 
-@inproceedings{FlowerDataset,
-  author    = {Nilsback, Maria-Elena and Zisserman, Andrew},
-  title     = {Automated Flower Classification over a Large Number of Classes},
-  year      = {2008},
-  isbn      = {9780769534763},
-  publisher = {IEEE Computer Society},
-  address   = {USA},
-  url       = {https://doi.org/10.1109/ICVGIP.2008.47},
-  doi       = {10.1109/ICVGIP.2008.47},
-  abstract  = {We investigate to what extent combinations of features can improve classification performance on a large dataset of similar classes. To this end we introduce a 103 class flower dataset. We compute four different features for the flowers, each describing different aspects, namely the local shape/texture, the shape of the boundary, the overall spatial distribution of petals, and the colour. We combine the features using a multiple kernel framework with a SVM classifier. The weights for each class are learnt using the method of Varma and Ray [16], which has achieved state of the art performance on other large dataset, such as Caltech 101/256. Our dataset has a similar challenge in the number of classes, but with the added difficulty of large between class similarity and small within class similarity. Results show that learning the optimum kernel combination of multiple features vastly improves the performance, from 55.1% for the best single feature to 72.8% for the combination of all features.},
-  booktitle = {Proceedings of the 2008 Sixth Indian Conference on Computer Vision, Graphics &amp; Image Processing},
-  pages     = {722,729},
-  numpages  = {8},
-  keywords  = {object classification, segmentation},
-  series    = {ICVGIP '08}
-}
-
 @inproceedings{FocalLoss,
   author    = {Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and He, Kaiming and Dollar, Piotr},
   title     = {Focal Loss for Dense Object Detection},
@@ -177,9 +160,68 @@
   doi            = {10.3390/info11020108}
 }
 
-@misc{SuperConvergence,
+@misc{SmithSuperConvergence,
   title  = {Super-Convergence: Very Fast Training of Residual Networks Using Large Learning Rates},
   author = {Leslie N. Smith and Nicholay Topin},
   year   = {2018},
   url    = {https://openreview.net/forum?id=H1A5ztj3b}
+}
+
+@article{Smith2015,
+  author     = {Leslie N. Smith},
+  title      = {No More Pesky Learning Rate Guessing Games},
+  journal    = {CoRR},
+  volume     = {abs/1506.01186},
+  year       = {2015},
+  url        = {http://arxiv.org/abs/1506.01186},
+  eprinttype = {arXiv},
+  eprint     = {1506.01186},
+  timestamp  = {Mon, 13 Aug 2018 16:47:53 +0200},
+  biburl     = {https://dblp.org/rec/journals/corr/Smith15a.bib},
+  bibsource  = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Smith2018,
+  author     = {Leslie N. Smith},
+  title      = {A disciplined approach to neural network hyper-parameters: Part 1
+                - learning rate, batch size, momentum, and weight decay},
+  journal    = {CoRR},
+  volume     = {abs/1803.09820},
+  year       = {2018},
+  url        = {http://arxiv.org/abs/1803.09820},
+  eprinttype = {arXiv},
+  eprint     = {1803.09820},
+  timestamp  = {Mon, 13 Aug 2018 16:46:45 +0200},
+  biburl     = {https://dblp.org/rec/journals/corr/abs-1803-09820.bib},
+  bibsource  = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Shorten2019,
+  author     = {Shorten, Connor and Khoshgoftaar, Taghi M.},
+  da         = {2019/07/06},
+  doi        = {10.1186/s40537-019-0197-0},
+  id         = {Shorten2019},
+  isbn       = {2196-1115},
+  journal    = {Journal of Big Data},
+  number     = {1},
+  pages      = {60},
+  title      = {A survey on Image Data Augmentation for Deep Learning},
+  ty         = {JOUR},
+  url        = {https://doi.org/10.1186/s40537-019-0197-0},
+  volume     = {6},
+  year       = {2019},
+  bdsk-url-1 = {https://doi.org/10.1186/s40537-019-0197-0}
+}
+
+@inproceedings{sklearn_api,
+  author    = {Lars Buitinck and Gilles Louppe and Mathieu Blondel and
+               Fabian Pedregosa and Andreas Mueller and Olivier Grisel and
+               Vlad Niculae and Peter Prettenhofer and Alexandre Gramfort
+               and Jaques Grobler and Robert Layton and Jake VanderPlas and
+               Arnaud Joly and Brian Holt and Ga{\"{e}}l Varoquaux},
+  title     = {{API} design for machine learning software: experiences from the scikit-learn
+               project},
+  booktitle = {ECML PKDD Workshop: Languages for Data Mining and Machine Learning},
+  year      = {2013},
+  pages     = {108--122}
 }
