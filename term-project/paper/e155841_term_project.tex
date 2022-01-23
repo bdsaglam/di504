@@ -58,7 +58,7 @@ on detecting plant diseases from the images of apple leaves.
 
 \subsection{Dataset}
 We use \href{https://www.kaggle.com/c/plant-pathology-2021-fgvc8/overview}{Plant Pathology 2021-FGVC8 dataset} \cite{Thapa2020} for training the models. 
-The dataset consist of over $18,632$ RGB images, 
+The dataset consists of over $18,632$ RGB images, 
 varying between $2592 \times 1728$ to $5184 \times 3456$ in size, 
 and their labels. Each sample is labelled by experts with one or more disease types 
 due to the fact that a plant may have multiple diseases. 
@@ -117,7 +117,11 @@ learning rate warming, label smoothing, transfer learning, weighting loss;
 and hyperparameters such as batch size, learning rate on three tasks image classification, 
 object detection, and semantic segmentation with three CNN architectures
 ResNet\-50 \cite{ResNet2016}, Inception\-V3 \cite{InceptionNetV3}, 
-and MobileNet \cite{MobileNet2017}.
+and MobileNet \cite{MobileNet2017}. The residual block of ResNet has convolutional layers 
+with $1 \times 1$ kernel size and 2 stride, which ignores half of the information flowing throught the block \cite{BagOfTricks}. It also proposes a few modifications to 
+Moreover, the convolutional layers with $7 \times 7$ kernel size are computationally 
+more expensive than several successive $3 \times 3$ convolutions. Hence, the paper
+proposes several tweaks to eliminate these inefficiencies in the original ResNet architecture.
 
 Lin et al. \cite{FocalLoss} proposed a novel loss function that improves training accuracy in 
 highly imbalanced problems such as object detection. Focal loss (Eq.\ref{eq:fl}) is a modulated 
@@ -177,6 +181,16 @@ to increase generalization;
     \item 2D rotation
     \item Zoom in and zoom out
 \end{itemize}
+
+\begin{figure}[h]
+    \centerline{\includegraphics[width = 0.45 \textwidth]{image-aug-3x3.png}}
+    \caption{Samples for the image augmentations applied on an image}
+    \label{fig:image-aug}
+\end{figure}
+
+Low-precision floating point numbers (FP16) have been used 
+for model weights and gradients to accelerate training 
+\cite{Micikevicius2018} \cite{BagOfTricks}.
 The models are evaluated with the following metrics implemented 
 in scikit-learn library \cite{sklearn_api}: 
 accuracy, F1 score with macro and samples averaging.
@@ -203,6 +217,7 @@ EfficientNet-B3       & 384 & Light                 & BCE     & 0.957           
 \end{table}
 
 \section{Conclusion}
+\clearpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography.bib}
