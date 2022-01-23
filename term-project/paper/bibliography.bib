@@ -9,31 +9,131 @@
   doi      = {https://doi.org/10.1002/aps3.11390},
   url      = {https://bsapubs.onlinelibrary.wiley.com/doi/abs/10.1002/aps3.11390},
   eprint   = {https://bsapubs.onlinelibrary.wiley.com/doi/pdf/10.1002/aps3.11390},
-  abstract = {Premise Apple orchards in the United States are under constant threat from a large number of pathogens and insects. Appropriate and timely deployment of disease management depends on early disease detection. Incorrect and delayed diagnosis can result in either excessive or inadequate use of chemicals, with increased production costs and increased environmental and health impacts. Methods and Results We have manually captured 3651 high-quality, real-life symptom images of multiple apple foliar diseases, with variable illumination, angles, surfaces, and noise. A subset of images, expert-annotated to create a pilot data set for apple scab, cedar apple rust, and healthy leaves, was made available to the Kaggle community for the Plant Pathology Challenge as part of the Fine-Grained Visual Categorization (FGVC) workshop at the 2020 Computer Vision and Pattern Recognition conference (CVPR 2020). Participants were asked to use the image data set to train a machine learning model to classify disease categories and develop an algorithm for disease severity quantification. The top three area under the ROC curve (AUC) values submitted to the private leaderboard were 0.98445, 0.98182, and 0.98089. We also trained an off-the-shelf convolutional neural network on this data for disease classification and achieved 97\% accuracy on a held-out test set. Discussion This data set will contribute toward development and deployment of machine learning–based automated plant disease classification algorithms to ultimately realize fast and accurate disease detection. We will continue to add images to the pilot data set for a larger, more comprehensive expert-annotated data set for future Kaggle competitions and to explore more advanced methods for disease classification and quantification.},
   year     = {2020}
 }
 
-@inproceedings{ResNet,
-  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
-  booktitle = {2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+@inproceedings{ResNet2016,
+  author    = {Kaiming He and
+               Xiangyu Zhang and
+               Shaoqing Ren and
+               Jian Sun},
   title     = {Deep Residual Learning for Image Recognition},
+  booktitle = {2016 {IEEE} Conference on Computer Vision and Pattern Recognition,
+               {CVPR} 2016, Las Vegas, NV, USA, June 27-30, 2016},
+  pages     = {770--778},
+  publisher = {{IEEE} Computer Society},
+  year      = {2016},
+  url       = {https://doi.org/10.1109/CVPR.2016.90},
+  doi       = {10.1109/CVPR.2016.90},
+  timestamp = {Wed, 16 Oct 2019 14:14:50 +0200},
+  biburl    = {https://dblp.org/rec/conf/cvpr/HeZRS16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{InceptionNetV1,
+  author    = {Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  biburl    = {https://www.bibsonomy.org/bibtex/2b68c97c21a0309ebfac7ee3e60fe099f/msteininger},
+  booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+  keywords  = {imported},
+  pages     = {1--9},
+  title     = {Going deeper with convolutions},
+  year      = 2015
+}
+
+@inproceedings{InceptionNetV3,
+  author    = {Szegedy, Christian and Vanhoucke, Vincent and Ioffe, Sergey and Shlens, Jon and Wojna, Zbigniew},
+  booktitle = {2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  title     = {Rethinking the Inception Architecture for Computer Vision},
   year      = {2016},
   volume    = {},
   number    = {},
-  pages     = {770-778},
-  doi       = {10.1109/CVPR.2016.90}
+  pages     = {2818-2826},
+  doi       = {10.1109/CVPR.2016.308}
 }
 
+@inproceedings{InceptionNetV4,
+  author    = {Szegedy, Christian and Ioffe, Sergey and Vanhoucke, Vincent and Alemi, Alexander A.},
+  title     = {Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning},
+  year      = {2017},
+  publisher = {AAAI Press},
+  abstract  = {Very deep convolutional networks have been central to the largest advances in image recognition performance in recent years. One example is the Inception architecture that has been shown to achieve very good performance at relatively low computational cost. Recently, the introduction of residual connections in conjunction with a more traditional architecture has yielded state-of-the-art performance in the 2015 ILSVRC challenge; its performance was similar to the latest generation Inception-v3 network. This raises the question: Are there any benefits to combining Inception architectures with residual connections? Here we give clear empirical evidence that training with residual connections accelerates the training of Inception networks significantly. There is also some evidence of residual Inception networks outperforming similarly expensive Inception networks without residual connections by a thin margin. We also present several new streamlined architectures for both residual and non-residual Inception networks. These variations improve the single-frame recognition performance on the ILSVRC 2012 classification task significantly. We further demonstrate how proper activation scaling stabilizes the training of very wide residual Inception networks. With an ensemble of three residual and one Inception-v4 networks, we achieve 3.08% top-5 error on the test set of the ImageNet classification (CLS) challenge.},
+  booktitle = {Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence},
+  pages     = {4278--4284},
+  numpages  = {7},
+  location  = {San Francisco, California, USA},
+  series    = {AAAI'17}
+}
+
+@misc{MobileNet2017,
+  added-at    = {2020-05-11T23:24:49.000+0200},
+  author      = {Howard, Andrew G. and Zhu, Menglong and Chen, Bo and Kalenichenko, Dmitry and Wang, Weijun and Weyand, Tobias and Andreetto, Marco and Adam, Hartwig},
+  biburl      = {https://www.bibsonomy.org/bibtex/2c5c68e31f5b5dea865fb7feacc5757c2/sohnki},
+  description = {[1704.04861] MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications},
+  interhash   = {962bc072d9243f18fac8a2ef7663970b},
+  intrahash   = {c5c68e31f5b5dea865fb7feacc5757c2},
+  keywords    = {MobileNet order1},
+  note        = {cite arxiv:1704.04861},
+  timestamp   = {2020-06-02T20:03:57.000+0200},
+  title       = {MobileNets: Efficient Convolutional Neural Networks for Mobile Vision
+                 Applications},
+  url         = {http://arxiv.org/abs/1704.04861},
+  year        = 2017
+}
+
+@article{ImageNet2014,
+  author     = {Russakovsky, Olga and Deng, Jia and Su, Hao and Krause, Jonathan and Satheesh, Sanjeev and Ma, Sean and Huang, Zhiheng and Karpathy, Andrej and Khosla, Aditya and Bernstein, Michael and Berg, Alexander C. and Fei-Fei, Li},
+  title      = {ImageNet Large Scale Visual Recognition Challenge},
+  year       = {2015},
+  issue_date = {December  2015},
+  publisher  = {Kluwer Academic Publishers},
+  address    = {USA},
+  volume     = {115},
+  number     = {3},
+  issn       = {0920-5691},
+  url        = {https://doi.org/10.1007/s11263-015-0816-y},
+  doi        = {10.1007/s11263-015-0816-y},
+  abstract   = {The ImageNet Large Scale Visual Recognition Challenge is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions. This paper describes the creation of this benchmark dataset and the advances in object recognition that have been possible as a result. We discuss the challenges of collecting large-scale ground truth annotation, highlight key breakthroughs in categorical object recognition, provide a detailed analysis of the current state of the field of large-scale image classification and object detection, and compare the state-of-the-art computer vision accuracy with human accuracy. We conclude with lessons learned in the 5 years of the challenge, and propose future directions and improvements.},
+  journal    = {Int. J. Comput. Vision},
+  month      = {dec},
+  pages      = {211-252},
+  numpages   = {42},
+  keywords   = {Object detection, Benchmark, Large-scale, Dataset, Object recognition}
+}
+
+@article{CIFAR,
+  author    = {Krizhevsky, Alex},
+  journal   = {Technical Report},
+  keywords  = {},
+  pages     = {32--33},
+  timestamp = {2021-01-21T03:01:11.000+0100},
+  title     = {Learning Multiple Layers of Features from Tiny Images},
+  url       = {https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf},
+  year      = 2009
+}
+
+@inproceedings{FlowerDataset,
+  author    = {Nilsback, Maria-Elena and Zisserman, Andrew},
+  title     = {Automated Flower Classification over a Large Number of Classes},
+  year      = {2008},
+  isbn      = {9780769534763},
+  publisher = {IEEE Computer Society},
+  address   = {USA},
+  url       = {https://doi.org/10.1109/ICVGIP.2008.47},
+  doi       = {10.1109/ICVGIP.2008.47},
+  abstract  = {We investigate to what extent combinations of features can improve classification performance on a large dataset of similar classes. To this end we introduce a 103 class flower dataset. We compute four different features for the flowers, each describing different aspects, namely the local shape/texture, the shape of the boundary, the overall spatial distribution of petals, and the colour. We combine the features using a multiple kernel framework with a SVM classifier. The weights for each class are learnt using the method of Varma and Ray [16], which has achieved state of the art performance on other large dataset, such as Caltech 101/256. Our dataset has a similar challenge in the number of classes, but with the added difficulty of large between class similarity and small within class similarity. Results show that learning the optimum kernel combination of multiple features vastly improves the performance, from 55.1% for the best single feature to 72.8% for the combination of all features.},
+  booktitle = {Proceedings of the 2008 Sixth Indian Conference on Computer Vision, Graphics &amp; Image Processing},
+  pages     = {722,729},
+  numpages  = {8},
+  keywords  = {object classification, segmentation},
+  series    = {ICVGIP '08}
+}
 
 @inproceedings{FocalLoss,
-  author    = {Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and He, Kaiming and Dollár, Piotr},
-  booktitle = {2017 IEEE International Conference on Computer Vision (ICCV)},
+  author    = {Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and He, Kaiming and Dollar, Piotr},
   title     = {Focal Loss for Dense Object Detection},
-  year      = {2017},
-  volume    = {},
-  number    = {},
-  pages     = {2999-3007},
-  doi       = {10.1109/ICCV.2017.324}
+  booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
+  month     = {Oct},
+  year      = {2017}
 }
 
 @inproceedings{EfficientNet,
@@ -59,7 +159,7 @@
   year      = {2019},
   volume    = {},
   number    = {},
-  pages     = {558-567},
+  pages     = {558--567},
   doi       = {10.1109/CVPR.2019.00065}
 }
 
