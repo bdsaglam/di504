@@ -22,21 +22,27 @@
         + fp16
         + 1-cycle lr policy
         + weighted loss
-        + oversampling
+        - oversampling
     - Hyperparam optimization?
         + Experiment tracking with wandb
 - Inference
-    - TTA
-    - Export & load
-    - Submit to Kaggle
+    + TTA
+    + Export & load
+    + Submit to Kaggle
 - Paper
     - Introduction where you define your problem.
     - Literature review
     - Dataset and its details
     - Methods
+        - Image augmentation light, heavy
+        - Define F1 macro and samples
+        - TTA
     - Results
         - baseline model
         - experiment results table
+        - give link to the public wandb experiments
+        - ROC curve per class
+        - report test performance of the best model
     - Conclusion and Discussion
     - References
 - Presentation

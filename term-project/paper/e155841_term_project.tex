@@ -205,23 +205,58 @@ accuracy, F1 score with macro and samples averaging.
     \text{F1} &= \frac{2*TP}{2*TP+FP+FN}
 \end{align*}
 
-\begin{table}[htbp]
+Macro averages F1 scores by class; whereas, samples averages by instance.
+
+
+The baseline corresponds to a dummy model produces uniform random probability per class. 
+
+We benefit from transfer learning by using the models pretrained on ImageNet. Transfer learning
+means using a subset of weights of a model pretrained on another dataset instead of 
+creating a model from scratch with untrained weights.
+The final classification layer of each pretrained model is replaced with a new fully connected layer to make them applicable to our dataset. 
+They're trained by fine tuning the classification head for 5 epochs while the parameters 
+of the backbone are frozen; and then,
+unfreezing the whole model and training until the validation loss saturates.
+
+We use F1 scores to rank models since accuracy can be misleading for our task.
+This is because the majority of labels are negative, hence, even a model always predicting 
+healthy achieves $90.1$ accuracy score. 
+
+The experiment results are given in Table \ref{table:experiment_results}. 
+Aug. stands for image augmentation and its level. 
+BCE corresponds to binary cross entropy loss; WBCE corresponds to binary cross entropy loss with 
+class weights; FL corresponds to focal loss.
+
+As it's seen, ResNet18 architecture with light image augmentation achieves the best performance.
+
+\begin{table}[bp]
 \caption{Experiment results}
 \begin{center}
-\begin{tabular}{llll|rrr}
-\textbf{Arch.} & \multicolumn{1}{l}{\textbf{Img size}} & \textbf{Aug.} & \textbf{Loss} & \multicolumn{1}{r}{\textbf{Acc.}} & \multicolumn{1}{r}{\textbf{F1(macro)}} & \multicolumn{1}{r}{\textbf{F1(samples)}} \\ \hline
-ResNet18              & 384 & No                    & BCE     & 0.960                                 & 0.879                                  & 0.500                                       \\ 
-ResNet34              & 384 & No                    & BCE     & 0.964                                 & 0.885                                  & 0.500                                       \\ 
-ResNet18              & 384 & Light                 & BCE     & 0.959                                 & 0.871                                  & 0.500                                       \\ 
-ResNet101             & 384 & Light                 & BCE     & 0.860                                 & 0.440                                  & 0.500                                       \\ 
-EfficientNet-B0       & 384 & Light                 & BCE     & 0.954                                 & 0.862                                  & 0.647                                    \\ 
-EfficientNet-B3       & 384 & Light                 & BCE     & 0.957                                 & 0.883                                  & 0.658                                    \\ \hline
+\begin{tabular}{lllll|rrr}
+\textbf{Arch.} & \textbf{\#param [M]} & \multicolumn{1}{l}{\textbf{Img size}} & \textbf{Aug.} & \textbf{Loss} & \multicolumn{1}{r}{\textbf{Acc.}} & \multicolumn{1}{r}{\textbf{F1(macro)}} & \multicolumn{1}{r}{\textbf{F1(samples)}} \\ \hline
+Baseline (uni.random) & 0        & NA & NA                    & NA     & 0.1672                                & 0.277                                  & 0.270                                   \\ 
+ResNet18              & 11.7     & 384 & None                 & BCE    & 0.963                                 & 0.888                                  & 0.675                                   \\ 
+\textbf{ResNet18}     & 11.7     & 384 & 1                    & BCE    & \textbf{0.966}                        & \textbf{0.895}                         & \textbf{0.690}                                   \\ 
+ResNet18              & 11.7     & 384 & 2                    & BCE    & 0.963                                 & 0.889                                  & 0.683                                   \\ 
+ResNet18              & 11.7     & 384 & 1                    & FL     & 0.961                                 & 0.874                                  & 0.671                                   \\ 
+ResNet18              & 11.7     & 384 & 1                    & WBCE   & 0.936                                 & 0.792                                  & 0.587                                   \\ 
+ResNet34              & 21.8     & 384 & 2                    & BCE    & 0.965                                 & 0.891                                  & 0.681                                   \\ 
+EfficientNet-B2       & 9.2      & 384 & 1                    & BCE    & 0.957                                 & 0.865                                  & 0.664                                   \\ 
+EfficientNet-B3       & 12.3     & 512 & 2                    & FL     & 0.960                                 & 0.873                                  & 0.657                                   \\ 
+XSE-ResNext50         & 27.7     & 384 & 2                    & BCE    & 0.895                                 & 0.658                                  & 0.443                                   \\
 \end{tabular}
 \label{table:experiment_results}
 \end{center}
 \end{table}
 
+
 \section{Conclusion}
+
+It can be concluded that deep models and models with more trainable parameters 
+don't always achieve the best performance. Neither focal loss nor weighting 
+binary cross entropy loss make any improvement on the model performance. 
+This might be due to the fact that the class imbalance is not very high in the dataset.
+
 \clearpage
 
 \bibliographystyle{IEEEtran}
