@@ -37,6 +37,7 @@
 \maketitle
 
 \begin{abstract}
+    In this project, we experimented with different convolutional neural networks, ResNets and EfficientNets, to detect plant pathologies from leaf images. Since a plant may have more than one disease, the models are trained for multi-label classification. The dataset used in the training is imbalanced. Focal loss and weighted binary cross-entropy loss functions have been tried to combat class imbalance. We also demonstrated the impact of various techniques such as image augmentation, transfer learning, learning rate warm-up, low precision (fp16) training, and 1-cycle learning rate scheduling policy. We found that deeper and more complex models don't always yield higher performances than simpler models. We hypothesize this to be due to the effectiveness of training techniques applied. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -218,16 +219,12 @@ They're trained by fine tuning the classification head for 5 epochs while the pa
 of the backbone are frozen; and then,
 unfreezing the whole model and training until the validation loss saturates.
 
-We use F1 scores to rank models since accuracy can be misleading for our task.
-This is because the majority of labels are negative, hence, even a model always predicting 
-healthy achieves $90.1$ accuracy score. 
-
 The experiment results are given in Table \ref{table:experiment_results}. 
 Aug. stands for image augmentation and its level. 
 BCE corresponds to binary cross entropy loss; WBCE corresponds to binary cross entropy loss with 
 class weights; FL corresponds to focal loss.
 
-As it's seen, ResNet18 architecture with light image augmentation achieves the best performance.
+As it can be seen, ResNet18 architecture with light image augmentation achieves the best performance. 
 
 \begin{table}[bp]
 \caption{Experiment results}
@@ -252,10 +249,14 @@ XSE-ResNext50         & 27.7     & 384 & 2                    & BCE    & 0.895  
 
 \section{Conclusion}
 
-It can be concluded that deep models and models with more trainable parameters 
+It can be concluded that deep and complex models with more trainable parameters 
 don't always achieve the best performance. Neither focal loss nor weighting 
 binary cross entropy loss make any improvement on the model performance. 
 This might be due to the fact that the class imbalance is not very high in the dataset.
+It can be stated that the model benefits from image augmentation as it generates
+more samples in various angles and lighting conditions. However, when the augmentation 
+is too heavy, it may distort the images such that important features are lost. Hence,
+the model performance degrades.
 
 \clearpage
 
